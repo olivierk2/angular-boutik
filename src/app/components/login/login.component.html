@@ -1,0 +1,23 @@
+<form [formGroup]="signInForm" (ngSubmit)="signIn()">
+
+    <div class="form-group">
+        <label for="usernameLabel">Nom d'utilisateuri: </label>
+        <input formControlName="username" class="form-control" type="text" placeholder="ex: Bobby" id="usernameLabel" />
+        <!-- 
+          -- J'appel une fonction qui renvoie soit faux, soit une chaine de carateres.
+          -- if ("salut") <- renvoi vrai en JavaScript/TypeScript
+          -- let errorMsg, crée une variable local a la balise <p> qui contiendra le message renvoyé
+          -- par la fonction controlUsername().
+          -- l'etoile '*' est purement la pour le design, c'est juste du texte ex: *Le nom est obligatoire.
+         -->
+        <p class="text-danger" *ngIf="controlUsername(); let errorMsg">*{{errorMsg}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="usernameLabel">Mot de passe: </label>
+        <input formControlName="password" class="form-control" type="password" placeholder="ex: AbbC5" id="passwordLabel" />
+        <p class="text-dander" *ngIf="controlPassword(); let errorMsg">*{{errorMsg}}</p>
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Connexion" />
+</form>

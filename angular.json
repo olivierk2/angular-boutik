@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "boutik": {
+    "mini-boutiqueV2": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/boutik",
+            "outputPath": "dist/mini-boutiqueV2",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -50,11 +51,6 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
                 }
               ]
             }
@@ -63,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "boutik:build"
+            "browserTarget": "mini-boutiqueV2:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "boutik:build:production"
+              "browserTarget": "mini-boutiqueV2:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "boutik:build"
+            "browserTarget": "mini-boutiqueV2:build"
           }
         },
         "test": {
@@ -111,15 +107,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "boutik:serve"
+            "devServerTarget": "mini-boutiqueV2:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "boutik:serve:production"
+              "devServerTarget": "mini-boutiqueV2:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "boutik"
+  "defaultProject": "mini-boutiqueV2"
 }

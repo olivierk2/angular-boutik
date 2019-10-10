@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <!-- le routerLink remplace le href="" .
+          -- la principale difference entre les deux est que le routerLink ne raffraîchit pas la page.
+          -- routerLinkActive applique la classe "active" au lien, ce qui permet d'appliquer un style dans
+          -- de navigation, c'est purement optionnel -->
+        <a class="nav-link" routerLink="#" routerLinkActive="active">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login" routerLinkActive="active">Connexion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="panier" routerLinkActive="active">Panier</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="products" routerLinkActive="active">Liste des Produits</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Aliment ..." (input)="onInput($event)" />
+      <!-- Dans notre cas, nous n'utilisons pas le boutton rechercher puisque nous trions
+        -- les résultats à chaque touche appuyées-->
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,20 @@
+<!-- Si il n'y a pas de produit qui correspond, on affiche 'aucun resultat' -->
+<h2 *ngIf="!isList">Aucun article trouvé</h2>
+
+<!-- Si il y a des produits on affiche la liste -->
+<div *ngIf="isList">
+    <h2>Liste des articles:</h2>
+    <div id="items">
+        <div *ngFor="let article of articles" class="card" style="width: 16rem;">
+            <img [src]="article.img" height="270px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{article.name}}</h5>
+                <p class="card-text">prix: {{article.price | currency:'EUR':'symbol':'1.0-2':'fr'}}</p>
+                <!-- Lorsqu'on clique sur le boutton, on appelle la fonction addProduct qui recupere l'id
+                  -- du produit cliqué.
+                 -->
+                <button class="btn btn-primary" (click)="addProduct(article.id)">Ajouter au Panier</button>
+            </div>
+        </div>
+    </div>
+</div>

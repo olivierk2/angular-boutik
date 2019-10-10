@@ -1,0 +1,31 @@
+<h2>Mon Panier</h2>
+<hr/>
+<!-- 
+  -- si product.length est superieur à 0, ca renvoie vrai, sinon ca renvoie faux
+  -- equivaut à faire *ngIf="product.length <= 0"
+-->
+<h3 *ngIf="!products.length">Votre panier est vide</h3>
+
+<!-- On met nos articles dans un joli tableau, stylisé avec les classes de bootsrap -->
+<div *ngIf="products.length">
+    <button class='btn btn-primary' (click)="viderPanier()">Vider le panier</button><br/>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Quantite</th>
+          </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let p of products; let i = index">
+              <!-- On fait i + 1, car ce n'est pas logique d'avoir un article 0 dans un affichage -->
+                <th scope="row">{{i + 1}}</th>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>{{1}}</td>
+            </tr>
+        </tbody>
+      </table>
+</div>
